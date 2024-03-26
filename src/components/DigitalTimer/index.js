@@ -11,14 +11,9 @@ class DigitalTimer extends Component {
   onClikcToStart = () => {
     this.setState({isPlaying: false})
     this.setState(prevState => ({isStarted: !prevState.isStarted}))
-    this.timerID = setInterval(this.stopwatchFunc, 1000)
-  }
-  stopwatchFunc = () => {
-    this.setState(prevState => ({timer: prevState.timer - 1}))
   }
   onClickToResst = () => {
     this.setState({isPlaying: true, isStarted: false, timer: 25, stopWatch: "25:00"})
-    clearInterval(this.timerID)
   }
   onClickDe = () => {
     const {isStarted, timer,} = this.state
